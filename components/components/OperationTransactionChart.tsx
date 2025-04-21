@@ -18,7 +18,7 @@ const OperationTransactionChart = ({ type }: TypeTransLoan) => {
     const fetchTransactionType = async () => {
         try {
             setIsLoading(true);
-            const data = await getTransactionsOperation(type as unknown as TypeTransLoan);
+            const data = await getTransactionsOperation(type);
             if (data) {
                 setTransactionOperation(data);
                 console.log(transactionOperation)
