@@ -13,7 +13,7 @@ interface VolumeTransactionValueCountCSVCa {
 }
 export async function getVolumeTransactions(): Promise<VolumeTransactionResponse> {
     try {
-        const filePath = path.join(process.cwd(), "public", "kpi_data", "volume_transaction_value_count_mounth_df.csv");
+        const filePath = path.join(process.cwd(), "kpi_data", "volume_transaction_value_count_mounth_df.csv");
 
         const fileContent = await fs.readFile(filePath, "utf-8");
 
@@ -60,7 +60,7 @@ interface TransactionOperationCSV {
 }
 export async function getTransactionsType(): Promise<TransactionType[]> {
     try {
-        const filePath = path.join(process.cwd(), "public", "kpi_data", "transaction_type.csv");
+        const filePath = path.join(process.cwd(), "kpi_data", "transaction_type.csv");
 
         const fileContent = await fs.readFile(filePath, "utf-8");
 
@@ -87,7 +87,7 @@ export async function getTransactionsType(): Promise<TransactionType[]> {
 
 export async function getTransactionsOperation(type: "transactions" | "prêts"): Promise<TransactionOperation[]> {
     try {
-        const filePath = path.join(process.cwd(), "public", "kpi_data", (type === "transactions") ? "transaction_operation.csv" : "loan_status.csv");
+        const filePath = path.join(process.cwd(), "kpi_data", (type === "transactions") ? "transaction_operation.csv" : "loan_status.csv");
 
         const fileContent = await fs.readFile(filePath, "utf-8");
 
@@ -118,7 +118,7 @@ interface DominantTransactionCountPropsCSV {
 }
 export async function getDominantDistrictCount(type: "transactions" | "prêts"): Promise<DominantTransactionCountProps[]> {
     try {
-        const filePath = path.join(process.cwd(), "public", "kpi_data", (type === "transactions")? "dominant_district_count_df.csv" : "dominant_district_loan_count.csv");
+        const filePath = path.join(process.cwd(), "kpi_data", (type === "transactions")? "dominant_district_count_df.csv" : "dominant_district_loan_count.csv");
 
         const fileContent = await fs.readFile(filePath, "utf-8");
 
@@ -150,7 +150,7 @@ interface DominantAccountCountPropsCSV {
 }
 export async function getDominantAccountCount(): Promise<DominantAccountCountProps[]> {
     try {
-        const filePath = path.join(process.cwd(), "public", "kpi_data", "transaction_per_account.csv");
+        const filePath = path.join(process.cwd(), "kpi_data", "transaction_per_account.csv");
 
         const fileContent = await fs.readFile(filePath, "utf-8");
 
@@ -183,7 +183,7 @@ interface VolumeTransactionValueCountCSV {
 }
 export async function getVolumeLoans(): Promise<VolumeTransactionResponse> {
     try {
-        const filePath = path.join(process.cwd(), "public", "kpi_data", "volume_loan_count_sum.csv");
+        const filePath = path.join(process.cwd(), "kpi_data", "volume_loan_count_sum.csv");
 
         const fileContent = await fs.readFile(filePath, "utf-8");
 

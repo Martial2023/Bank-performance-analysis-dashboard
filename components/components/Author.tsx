@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { Mail, Phone, Linkedin, Globe, CircuitBoard } from 'lucide-react';
+import Image from 'next/image';
 
 const Author = () => {
     const [greeting, setGreeting] = useState("Bonjour");
@@ -20,7 +21,8 @@ const Author = () => {
                 {/* Image section */}
                 <div className="w-full md:w-1/3 bg-gray-100 dark:bg-gray-800 flex items-center justify-center p-6">
                     <div className="relative w-48 h-48 rounded-full overflow-hidden border-4 border-white dark:border-gray-700 shadow-md">
-                        <img
+                        <Image
+                            fill
                             src="/avatar.jpg"
                             alt="AVADRA Martial"
                             className="object-cover w-full h-full"

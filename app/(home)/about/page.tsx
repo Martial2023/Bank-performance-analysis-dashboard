@@ -101,7 +101,7 @@ const Page = () => {
                             {index < steps.length - 1 && (
                                 <div className="absolutes left-10 top-[4.5rem] bottom-0 w-0.5 bg-gray-200 dark:bg-gray-700 z-0"></div>
                             )}
-                            <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 p-6 md:p-8 flex gap-6  z-10">
+                            <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 p-6 md:p-8 flex flex-col items-center justify-center md:flex-row gap-6  z-10">
                                 <div className={`h-10 w-10 shrink-0 rounded-lg ${step.color} flex items-center justify-center`}>
                                     {step.icon}
                                 </div>
