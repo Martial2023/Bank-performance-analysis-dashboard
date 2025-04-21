@@ -10,9 +10,8 @@ import TopRegionChart from '@/components/components/TopRegionChart';
 import TopAccountChart from '@/components/components/TopAccountChart';
 import { formatNumber } from '@/lib/formatNumber';
 import TransactionVolumeConclusion from '@/components/components/TransactionVolumeConclusion';
-import { getVolumeTransactions } from '../actions';
 
-const page = () => {
+const Page = () => {
   const [totals, setTotals] = useState<Totals>()
   const [isLoading, setIsLoading] = useState<boolean>(false)
 
@@ -20,7 +19,7 @@ const page = () => {
     <main className="p-2 md:p-6 lg:p-8">
       <div className="mb-6">
         <h1 className="text-2xl font-semibold text-gray-800 dark:text-gray-200">Tableau de bord</h1>
-        <p className="text-sm text-gray-500 dark:text-gray-400">Vue d'ensemble des transactions et analyses</p>
+        <p className="text-sm text-gray-500 dark:text-gray-400">Vue d&apos;ensemble des transactions et analyses</p>
       </div>
 
       <section className="grid grid-cols-1 md:grid-cols-6 gap-6">
@@ -160,4 +159,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

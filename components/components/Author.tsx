@@ -44,7 +44,7 @@ const Author = () => {
 
                         <p>
                             Je suis Martial, Data Scientist et élève ingénieur en Mathématiques et Modélisation,
-                            passionné par la data science et l'intelligence artificielle.
+                            passionné par la data science et l&apos;intelligence artificielle.
                         </p>
 
                         <p>

@@ -65,13 +65,13 @@ const LoanConclusion = () => {
             <div className="px-6 pb-6">
                 <div className="bg-gray-50 dark:bg-gray-700/30 rounded-lg p-4">
                     <h3 className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                        Conclusion de l'analyse
+                        Conclusion de l&apos;analyse
                     </h3>
                     <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
-                        L'analyse révèle une forte dispersion des montants de prêts (écart-type 113 372 CZK), confirmant
+                        L&apos;analyse révèle une forte dispersion des montants de prêts (écart-type 113 372 CZK), confirmant
                         des disparités régionales importantes. Dans les districts à risque élevé, les montants peuvent atteindre
-                        jusqu'à 590 820 CZK. Les clients préfèrent généralement des prêts à moyen terme, mais les paiements
-                        mensuels élevés dans certains districts (jusqu'à 9 910 CZK) reflètent des difficultés potentielles
+                        jusqu&apos;à 590 820 CZK. Les clients préfèrent généralement des prêts à moyen terme, mais les paiements
+                        mensuels élevés dans certains districts (jusqu&apos;à 9 910 CZK) reflètent des difficultés potentielles
                         de remboursement. Les 25% des prêts inférieurs à 66 732 CZK suggèrent une approche prudente dans
                         les districts à faible revenu.
                     </p>
