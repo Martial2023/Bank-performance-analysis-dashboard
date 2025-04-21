@@ -55,12 +55,12 @@ const Author = () => {
                         <ul className="space-y-2 pl-6 list-disc">
                             <li>Reconnaissance faciale en temps réel</li>
                             <li>Détection de fraude dans les systèmes de paiement</li>
-                            <li>Applications web intelligentes pour la gestion d'entreprise</li>
+                            <li>Applications web intelligentes pour la gestion d&apos;entreprise</li>
                         </ul>
 
                         <p>
-                            Curieux, rigoureux et animé par l'envie d'avoir un impact positif en Afrique,
-                            je m'investis dans des projets innovants qui répondent à des problématiques réelles.
+                            Curieux, rigoureux et animé par l&apos;envie d&apos;avoir un impact positif en Afrique,
+                            je m&apos;investis dans des projets innovants qui répondent à des problématiques réelles.
                         </p>
                     </div>
 

@@ -3,17 +3,13 @@
 import React, { useState } from 'react';
 import { TrendingUp, Users, CreditCard, Loader2 } from 'lucide-react';
 import { Totals } from '@/lib/types';
-import TypeTransactionChart from '@/components/components/TypeTransactionChart';
 import VolumeTransactionValueCountChart from '@/components/components/VolumeTransactionValueCountChart';
 import OperationTransactionChart from '@/components/components/OperationTransactionChart';
 import TopRegionChart from '@/components/components/TopRegionChart';
-import TopAccountChart from '@/components/components/TopAccountChart';
 import { formatNumber } from '@/lib/formatNumber';
-import TransactionVolumeConclusion from '@/components/components/TransactionVolumeConclusion';
-import { getVolumeLoans, getVolumeTransactions } from '@/app/actions';
 import LoanConclusion from '@/components/components/LoanConclusion';
 
-const page = () => {
+const Page = () => {
   const [totals, setTotals] = useState<Totals>()
   const [isLoading, setIsLoading] = useState<boolean>(false)
 
@@ -21,12 +17,11 @@ const page = () => {
     <main className="p-2 md:p-6 lg:p-8">
       <div className="mb-6">
         <h1 className="text-2xl font-semibold text-gray-800 dark:text-gray-200">Tableau de bord</h1>
-        <p className="text-sm text-gray-500 dark:text-gray-400">Vue d'ensemble des prêts et analyses</p>
+        <p className="text-sm text-gray-500 dark:text-gray-400">Vue d&apos;ensemble des prêts et analyses</p>
       </div>
 
       <section className="grid grid-cols-1 md:grid-cols-6 gap-6">
         <div className="col-span-1 md:col-span-4 space-y-6">
-
           <div className="grid md:grid-cols-3 gap-4">
             <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm p-4 border border-gray-100 dark:border-gray-700 transition-all hover:shadow-md">
               <div className="flex justify-between items-start">
@@ -157,4 +152,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
