@@ -6,6 +6,7 @@ import React, { useEffect, useState } from 'react';
 import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip, Legend } from 'recharts';
 
 
+
 // Couleurs modernes et cohérentes
 const COLORS = ['#3b82f6', '#10b981', '#8b5cf6', '#f59e0b', '#ef4444'];
 
@@ -68,21 +69,6 @@ const OperationTransactionChart = ({ type }: TypeTransLoan) => {
         );
     };
 
-    // Formatteur pour l'infobulle
-    const customTooltip = ({ active, payload }: any) => {
-        if (active && payload && payload.length) {
-            console.log(payload)
-            return (
-                <div className="bg-white dark:bg-gray-800 p-3 shadow-lg rounded-lg border border-gray-100 dark:border-gray-700">
-                    <p className="font-medium text-sm">{payload[0].payload.payload.operation}</p>
-                    <p className="text-sm text-gray-500 dark:text-gray-400">
-                        Proportion: <span className="font-medium text-blue-600 dark:text-blue-400">{(payload[0].value * 100).toFixed(2)}%</span>
-                    </p>
-                </div>
-            );
-        }
-        return null;
-    };
 
     // Animation de chargement
     if (isLoading) {
@@ -136,7 +122,7 @@ const OperationTransactionChart = ({ type }: TypeTransLoan) => {
                                     />
                                 ))}
                             </Pie>
-                            <Tooltip content={customTooltip} />
+                            <Tooltip />
                             <Legend
                                 values='operation'
                                 layout="horizontal"
