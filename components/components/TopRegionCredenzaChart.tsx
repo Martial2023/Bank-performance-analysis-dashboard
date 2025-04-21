@@ -12,7 +12,7 @@ import {
     CredenzaTitle,
     CredenzaTrigger,
 } from "@/components/ui/CredenzaModal"
-import { DominantTransactionCountProps, TypeTransLoan } from '@/lib/types'
+import { DominantTransactionCountProps } from '@/lib/types'
 import { Button } from '../ui/button'
 import { Bar, BarChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts'
 

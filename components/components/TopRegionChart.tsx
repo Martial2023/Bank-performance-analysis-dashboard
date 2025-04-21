@@ -129,7 +129,7 @@ const TopRegionChart = ({ type }: TypeTransLoan) => {
             >
                 <TopRegionCredenzaChart
                     data={dominantDistrictCount}
-                    type={type as unknown as TypeTransLoan}
+                    type={type}
                 />
             </div>
             <style jsx global>{`
