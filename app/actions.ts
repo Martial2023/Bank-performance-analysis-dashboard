@@ -1,8 +1,6 @@
 // app/actions/volumeTransactionActions.ts
 "use server";
 
-import { promises as fs } from "fs";
-import path from "path";
 import { parse } from "csv-parse/sync";
 import { VolumeTransactionValueCount, VolumeTransactionResponse, TransactionType, TransactionOperation, DominantTransactionCountProps, DominantAccountCountProps } from "@/lib/types";
 
@@ -13,9 +11,19 @@ interface VolumeTransactionValueCountCSVCa {
 }
 export async function getVolumeTransactions(): Promise<VolumeTransactionResponse> {
     try {
-        const filePath = path.join(process.cwd(), "kpi_data", "volume_transaction_value_count_mounth_df.csv");
+        // Charger le fichier via une requête HTTP
+        const baseUrl = process.env.NEXT_PUBLIC_VERCEL_URL || "http://localhost:3000";
+        const fileUrl = `${baseUrl}/kpi_data/volume_transaction_value_count_mounth_df.csv`;
+        const response = await fetch(fileUrl);
 
-        const fileContent = await fs.readFile(filePath, "utf-8");
+        if (!response.ok) {
+            throw new Error(`Erreur lors de la récupération du fichier CSV : ${response.statusText}`);
+        }
+
+        const fileContent = await response.text();
+        // const filePath = path.join(process.cwd(), "kpi_data", "volume_transaction_value_count_mounth_df.csv");
+
+        // const fileContent = await fs.readFile(filePath, "utf-8");
 
         // Parser le CSV
         const records = parse(fileContent, {
@@ -60,9 +68,19 @@ interface TransactionOperationCSV {
 }
 export async function getTransactionsType(): Promise<TransactionType[]> {
     try {
-        const filePath = path.join(process.cwd(), "kpi_data", "transaction_type.csv");
+        // Charger le fichier via une requête HTTP
+        const baseUrl = process.env.NEXT_PUBLIC_VERCEL_URL || "http://localhost:3000";
+        const fileUrl = `${baseUrl}/kpi_data/transaction_type.csv`;
+        const response = await fetch(fileUrl);
 
-        const fileContent = await fs.readFile(filePath, "utf-8");
+        if (!response.ok) {
+            throw new Error(`Erreur lors de la récupération du fichier CSV : ${response.statusText}`);
+        }
+
+        const fileContent = await response.text();
+        // const filePath = path.join(process.cwd(), "kpi_data", "transaction_type.csv");
+
+        // const fileContent = await fs.readFile(filePath, "utf-8");
 
         // Parser le CSV
         const records = parse(fileContent, {
@@ -87,9 +105,20 @@ export async function getTransactionsType(): Promise<TransactionType[]> {
 
 export async function getTransactionsOperation(type: "transactions" | "prêts"): Promise<TransactionOperation[]> {
     try {
-        const filePath = path.join(process.cwd(), "kpi_data", (type === "transactions") ? "transaction_operation.csv" : "loan_status.csv");
+        const file = type === "transactions" ? "transaction_operation.csv" : "loan_status.csv"
+        const baseUrl = process.env.NEXT_PUBLIC_VERCEL_URL || "http://localhost:3000";
+        const fileUrl = `${baseUrl}/kpi_data/${file}`;
+        const response = await fetch(fileUrl);
 
-        const fileContent = await fs.readFile(filePath, "utf-8");
+        if (!response.ok) {
+            throw new Error(`Erreur lors de la récupération du fichier CSV : ${response.statusText}`);
+        }
+
+        const fileContent = await response.text();
+
+        // const filePath = path.join(process.cwd(), "kpi_data", (type === "transactions") ? "transaction_operation.csv" : "loan_status.csv");
+
+        // const fileContent = await fs.readFile(filePath, "utf-8");
 
         // Parser le CSV
         const records = parse(fileContent, {
@@ -118,9 +147,21 @@ interface DominantTransactionCountPropsCSV {
 }
 export async function getDominantDistrictCount(type: "transactions" | "prêts"): Promise<DominantTransactionCountProps[]> {
     try {
-        const filePath = path.join(process.cwd(), "kpi_data", (type === "transactions")? "dominant_district_count_df.csv" : "dominant_district_loan_count.csv");
 
-        const fileContent = await fs.readFile(filePath, "utf-8");
+        const file = type === "transactions" ? "dominant_district_count_df.csv" : "dominant_district_loan_count.csv"
+        const baseUrl = process.env.NEXT_PUBLIC_VERCEL_URL || "http://localhost:3000";
+        const fileUrl = `${baseUrl}/kpi_data/${file}`;
+        const response = await fetch(fileUrl);
+
+        if (!response.ok) {
+            throw new Error(`Erreur lors de la récupération du fichier CSV : ${response.statusText}`);
+        }
+
+        const fileContent = await response.text();
+
+        // const filePath = path.join(process.cwd(), "kpi_data", (type === "transactions") ? "dominant_district_count_df.csv" : "dominant_district_loan_count.csv");
+
+        // const fileContent = await fs.readFile(filePath, "utf-8");
 
         // Parser le CSV
         const records = parse(fileContent, {
@@ -150,9 +191,19 @@ interface DominantAccountCountPropsCSV {
 }
 export async function getDominantAccountCount(): Promise<DominantAccountCountProps[]> {
     try {
-        const filePath = path.join(process.cwd(), "kpi_data", "transaction_per_account.csv");
+        const baseUrl = process.env.NEXT_PUBLIC_VERCEL_URL || "http://localhost:3000";
+        const fileUrl = `${baseUrl}/kpi_data/transaction_per_account.csv`;
+        const response = await fetch(fileUrl);
 
-        const fileContent = await fs.readFile(filePath, "utf-8");
+        if (!response.ok) {
+            throw new Error(`Erreur lors de la récupération du fichier CSV : ${response.statusText}`);
+        }
+
+        const fileContent = await response.text();
+
+        // const filePath = path.join(process.cwd(), "kpi_data", "transaction_per_account.csv");
+
+        // const fileContent = await fs.readFile(filePath, "utf-8");
 
         // Parser le CSV
         const records = parse(fileContent, {
@@ -183,9 +234,20 @@ interface VolumeTransactionValueCountCSV {
 }
 export async function getVolumeLoans(): Promise<VolumeTransactionResponse> {
     try {
-        const filePath = path.join(process.cwd(), "kpi_data", "volume_loan_count_sum.csv");
 
-        const fileContent = await fs.readFile(filePath, "utf-8");
+        const baseUrl = process.env.NEXT_PUBLIC_VERCEL_URL || "http://localhost:3000";
+        const fileUrl = `${baseUrl}/kpi_data/volume_loan_count_sum.csv`;
+        const response = await fetch(fileUrl);
+
+        if (!response.ok) {
+            throw new Error(`Erreur lors de la récupération du fichier CSV : ${response.statusText}`);
+        }
+
+        const fileContent = await response.text();
+
+        // const filePath = path.join(process.cwd(), "kpi_data", "volume_loan_count_sum.csv");
+
+        // const fileContent = await fs.readFile(filePath, "utf-8");
 
         // Parser le CSV
         const records = parse(fileContent, {

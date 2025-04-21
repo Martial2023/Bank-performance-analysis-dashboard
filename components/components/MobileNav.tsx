@@ -95,7 +95,7 @@ const MobileNav = () => {
                     className='flex items-center flex-row'
                 >
                     <Link
-                        className='flex-1/2'
+                        className='flex-2/3'
                         href={"/author"}
                         onClick={() => {
                             const navCloser = document.getElementById("close_navbar");
@@ -121,7 +121,7 @@ const MobileNav = () => {
                         </div>
                     </Link>
                     <CredenzaClose asChild>
-                        <Button className='flex-1/2' id="close_navbar">Close</Button>
+                        <Button className='flex-1/3' id="close_navbar">Close</Button>
                     </CredenzaClose>
                 </CredenzaFooter>
             </CredenzaContent>
