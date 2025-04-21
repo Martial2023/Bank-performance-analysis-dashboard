@@ -16,7 +16,7 @@ const TopRegionChart = ({ type }: TypeTransLoan) => {
         try {
             setIsLoading(true);
             setError(null);
-            const data = await getDominantDistrictCount(type as unknown as TypeTransLoan);
+            const data = await getDominantDistrictCount(type);
             if (data) {
                 setDominantDistrictCount(data);
             }

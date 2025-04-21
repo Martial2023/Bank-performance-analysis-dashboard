@@ -19,7 +19,7 @@ import { Bar, BarChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recha
 
 type Props = {
     data: DominantTransactionCountProps[]
-    type: TypeTransLoan
+    type: "transactions" | "prêts"
 }
 const TopRegionCredenzaChart = ({ data, type }: Props) => {
     return (
