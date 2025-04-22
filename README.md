@@ -84,20 +84,6 @@ Le dashboard se mettra à jour automatiquement à mesure que vous modifiez les f
 
 Le dashboard affiche des KPI comme le volume mensuel des transactions. Par exemple, pour `volume_transaction_value_count_month_df` :
 - **Données** : De janvier 1993 (177 transactions, CA 702 157,6 CZK) à juin 1993 (1880 transactions, CA 18 291 948,9 CZK).
-- **Totaux** : Volume total = 5347 transactions, CA total = 45 498 471,6 CZK.
-
-## En Savoir Plus sur Next.js
-
-Pour approfondir vos connaissances sur Next.js, consultez ces ressources :
-- [Documentation Next.js](https://nextjs.org/docs) - Tout sur les fonctionnalités et l’API de Next.js.
-- [Tutoriel Next.js](https://nextjs.org/learn) - Un tutoriel interactif pour apprendre Next.js.
-- [Dépôt GitHub de Next.js](https://github.com/vercel/next.js) - Vos retours et contributions sont les bienvenus !
-
-## Déploiement sur Vercel
-
-Le moyen le plus simple de déployer cette application Next.js est d’utiliser la [Plateforme Vercel](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme), créée par les développeurs de Next.js.
-
-Consultez la [documentation de déploiement Next.js](https://nextjs.org/docs/app/building-your-application/deploying) pour plus de détails.
 
 ## Contribution
 
